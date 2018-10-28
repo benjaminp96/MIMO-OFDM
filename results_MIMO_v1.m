@@ -26,7 +26,7 @@ clc; clear all; close all; warning off
 
 %% Input parameters
 % data points
-data = 2^16+25;                                   
+data = 2^16;                                   
 
 % fft size
 n_fft = 64;                                     
