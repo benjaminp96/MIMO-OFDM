@@ -1,2 +1,15 @@
-# new folder
-# just a place holder file
+# Code repository
+This folder contains the codes used to create the final MATLAB scripts to produce the findings for the investigation. 
+
+Different systems were created one at a time and different sections of the OFDM and MIMO blocks were added to the sytems. 
+
+A single transmitter, single reciever system was first created
+
+Then a two transmitter, single receiver
+
+Then a two transmitter, two receiver
+
+Then a two user, single receiver
+
+Then a two user, two receiver 
+
