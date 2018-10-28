@@ -214,7 +214,7 @@ for mod_type = 1:3
         yn = yn11 + yn21;               % combined signal at receiver 1  
         
         %% Serial to Parallel Conversion
-        yn_sub = reshape(yn,OFDM,length(Xn1));
+        yn_sub = reshape(yn,OFDM,size(Xn1,2));
         
         %% Sub-Carrier Demux
         Yn_sub1 = yn_sub(1:80,:);                              

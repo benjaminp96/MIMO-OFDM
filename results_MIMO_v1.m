@@ -234,8 +234,8 @@ for mod_type = 1:3
         yn2 = yn12 + yn22;              % combined signal at receiver 2
 
         %% Serial to Parallel Conversion
-        yn1_sp = reshape(yn1,OFDM,length(Xn1_cp));
-        yn2_sp = reshape(yn2,OFDM,length(Xn1_cp));
+        yn1_sp = reshape(yn1,OFDM,size(Xn1_cp,2));
+        yn2_sp = reshape(yn2,OFDM,size(Xn2_cp,2));
         
         %% Remove cyclic prefix
         yn1_rcp = yn1_sp((n_cp + 1):end,:);
