@@ -26,7 +26,7 @@ clc; clear all; close all; warning off
 
 %% Input parameters
 % data points
-data = 2^16;                                   
+data = 2^16+25;                                   
 
 % fft size
 n_fft = 64;                                     
@@ -57,9 +57,25 @@ binary_data = round(rand(data,1));
 for mod_type = 1:3
     % Quadrature Amplitude Modulation
     if mod_type == 1                                % Modulation Type: 4QAM
-        symbols = 2;                                % Bits per symbol  
+        symbols = 2;                                % Bits per symbol
+        % Padding for symbol mapping
+        while floor(length(binary_data)/symbols) ~= length(binary_data)/symbols
+            binary_data = [binary_data; zeros(1,1)];                                    
+        end
+        % Padding for subcarriers mapping
+        while floor(length(binary_data)/symbols/n_fft) ~= length(binary_data)/symbols/n_fft
+            binary_data = [binary_data; zeros(1,1)];                                    
+        end        
     elseif mod_type == 2                            % Modulation Type: 16QAM
         symbols = 4;
+        % Padding for symbol mapping
+        while floor(length(binary_data)/symbols) ~= length(binary_data)/symbols
+            binary_data = [binary_data; zeros(1,1)];                                    
+        end
+        % Padding for subcarriers mapping
+        while floor(length(binary_data)/symbols/n_fft) ~= length(binary_data)/symbols/n_fft
+            binary_data = [binary_data; zeros(1,1)];                                    
+        end        
     elseif mod_type == 3                            % Modulation Type: 64QAM
         symbols = 6;
         % Padding for symbol mapping

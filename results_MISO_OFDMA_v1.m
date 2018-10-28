@@ -68,8 +68,36 @@ for mod_type = 1:3
     % Quadrature Amplitude Modulation
     if mod_type == 1                                % Modulation Type: 4QAM
         symbols = 2;                                % Bits per symbol  
+        % Padding for symbol mapping
+        while floor(length(binary_data1)/symbols) ~= length(binary_data1)/symbols
+        binary_data1 = [binary_data1; zeros(1,1)];                                    
+        end
+        while floor(length(binary_data1)/symbols/(2*n_fft)) ~= length(binary_data1)/symbols/(2*n_fft)
+        binary_data1 = [binary_data1; zeros(1,1)];                                    
+        end
+        % Padding for subcarriers mapping
+        while floor(length(binary_data2)/symbols) ~= length(binary_data2)/symbols
+        binary_data2 = [binary_data2; zeros(1,1)];                                    
+        end
+        while floor(length(binary_data2)/symbols/(2*n_fft)) ~= length(binary_data2)/symbols/(2*n_fft)
+        binary_data2 = [binary_data2; zeros(1,1)];                                    
+        end       
     elseif mod_type == 2                            % Modulation Type: 16QAM
         symbols = 4;
+        % Padding for symbol mapping
+        while floor(length(binary_data1)/symbols) ~= length(binary_data1)/symbols
+        binary_data1 = [binary_data1; zeros(1,1)];                                    
+        end
+        while floor(length(binary_data1)/symbols/(2*n_fft)) ~= length(binary_data1)/symbols/(2*n_fft)
+        binary_data1 = [binary_data1; zeros(1,1)];                                    
+        end
+        % Padding for subcarriers mapping
+        while floor(length(binary_data2)/symbols) ~= length(binary_data2)/symbols
+        binary_data2 = [binary_data2; zeros(1,1)];                                    
+        end
+        while floor(length(binary_data2)/symbols/(2*n_fft)) ~= length(binary_data2)/symbols/(2*n_fft)
+        binary_data2 = [binary_data2; zeros(1,1)];                                    
+        end     
     elseif mod_type == 3                            % Modulation Type: 64QAM
         symbols = 6;
         % Padding for symbol mapping
