@@ -1,5 +1,5 @@
 # Time offsets in MIMO OFDM Systems 
-This repository includes the codes used for the FYP titled: Time offsets in MIMO OFDM Systems
+This repository includes the codes used for the FYP titled: **Time offsets in MIMO OFDM Systems**
 
 The final versions of the simulations are named below and can be run using MATLAB 2017b.
 
